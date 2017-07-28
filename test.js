@@ -22,4 +22,9 @@ assert.deepEqual(todo.list(), ['ノート買う']);
 assert.deepEqual(todo.donelist(), ['鉛筆買う']);
 //上のだけが完了に？
 
+todo.del('ノート買う');
+todo.del('鉛筆買う');
+assert.deepEqual(todo.list(), []);
+assert.deepEqual(todo.donelist(), []);
+
 console.log('テストが正常に完了');

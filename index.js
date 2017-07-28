@@ -71,6 +71,14 @@ function donelist(){
         .map(t => t[0]);
 }
 
+/**
+* 項目削除
+* @param {string} task
+*/
+function del(task){
+    tasks.delete(task);
+}
+
 
 module.exports = {
   /**
@@ -81,5 +89,6 @@ module.exports = {
   todo: todo,
   list: list,
   done: done,
-  donelist: donelist
+  donelist: donelist,
+  del: del
 };
