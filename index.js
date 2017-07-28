@@ -37,13 +37,34 @@ function isNotDone(taskAndIsDonePair){
 /**
 * TODOの一覧の配列を取得する
 * @return {array}
+*list関数説明
+*tasksに全て一覧がある
+*filterで必要なものだけを抜き出す
+*mapは各配列の要素に対して,タスク名を抽出して,新しい要素を作る
+*/
+function list(){
+    return Array.from(tasks)
+        .filter(isNotDone)
+        .map(t => t[0]);
+}
+
+/**
+* TODO を完了状態にする
+* @param {string} task
 */
 
-
-
-function list(){
-    return Array.form(tasks)
-        .filter(isNotDone)
+function done(task){
+    if(tasks.has(task)){
+      tasks.set(task, true);
+    }
+}
+/**
+* 完了済みのタスクの一覧の配列を取得
+* @return {array}
+*/
+function donelist(){
+    return Array.from(tasks)
+        .filter(isDone)
         .map(t => t[0]);
 }
 
@@ -55,5 +76,7 @@ module.exports = {
   *todo: todoを入れる
   */
   todo: todo,
-  list: list
+  list: list,
+  done: done,
+  donelist: donelist
 };
