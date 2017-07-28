@@ -15,4 +15,11 @@ assert.deepEqual(todo.list(), ['ノート買う', '鉛筆買う']);
 *追記;['']の中に入ってる文字列があればテストとおる
 */
 
+//done, 及び donelist のテスト
+todo.done('鉛筆買う');
+assert.deepEqual(todo.list(), ['ノート買う']);
+//上のだけが未完了に？
+assert.deepEqual(todo.donelist(), ['鉛筆買う']);
+//上のだけが完了に？
+
 console.log('テストが正常に完了');

@@ -56,6 +56,9 @@ function list(){
 function done(task){
     if(tasks.has(task)){
       tasks.set(task, true);
+      //タスクが存在してるかを確認して存在してるならば処理開始
+      //存在してればなければ作成し、あれば更新
+      //完了している、と更新
     }
 }
 /**
